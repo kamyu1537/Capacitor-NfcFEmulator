@@ -1,3 +1,7 @@
 export interface NfcFEmulatorPlugin {
-  echo(options: { value: string }): Promise<{ value: string }>;
+  enable(): Promise<void>;
+  disable(): Promise<void>;
+
+  getNfcId(): Promise<{ nfcId: string }>;
+  setNfcId(options: { nfcId: string }): Promise<{ result: boolean }>;
 }
