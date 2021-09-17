@@ -45,7 +45,7 @@ public class NfcFEmulator {
         try {
             nfcFCardEmulation.disableService(this.activity);
             nfcAdapter.disableReaderMode(this.activity);
-        } (Exception e) {
+        } catch (Exception e) {
             Log.e("NfcFEmulator", e);
         }
     }
