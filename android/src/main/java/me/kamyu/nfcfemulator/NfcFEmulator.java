@@ -30,18 +30,24 @@ public class NfcFEmulator {
         if (activity == null) return;
         if (NfcFHostService.isServiceStarted) return;
 
-        nfcFCardEmulation.enableService(this.activity, this.componentName);
-        nfcAdapter.enableReaderMode(this.activity, tag -> {
-            Log.d("NfcFEmulator", "onTagDiscovered");
-        }, 256, null);
+        try {
+            nfcFCardEmulation.enableService(this.activity, this.componentName);
+            nfcAdapter.enableReaderMode(this.activity, tag -> Log.d("NfcFEmulator", "onTagDiscovered"), 256, null);
+        } catch (Exception e) {
+            Log.e("NfcFEmulator", e);
+        }
     }
 
     public void disable() {
         if (activity == null) return;
         if (!NfcFHostService.isServiceStarted) return;
 
-        nfcFCardEmulation.disableService(this.activity);
-        nfcAdapter.disableReaderMode(this.activity);
+        try {
+            nfcFCardEmulation.disableService(this.activity);
+            nfcAdapter.disableReaderMode(this.activity);
+        } (Exception e) {
+            Log.e("NfcFEmulator", e);
+        }
     }
 
     public String getNfcId() {
