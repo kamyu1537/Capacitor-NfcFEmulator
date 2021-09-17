@@ -34,7 +34,7 @@ public class NfcFEmulator {
             nfcFCardEmulation.enableService(this.activity, this.componentName);
             nfcAdapter.enableReaderMode(this.activity, tag -> Log.d("NfcFEmulator", "onTagDiscovered"), 256, null);
         } catch (Exception e) {
-            Log.e("NfcFEmulator", e);
+            Log.e("NfcFEmulator", String.valueOf(e));
         }
     }
 
@@ -46,7 +46,7 @@ public class NfcFEmulator {
             nfcFCardEmulation.disableService(this.activity);
             nfcAdapter.disableReaderMode(this.activity);
         } catch (Exception e) {
-            Log.e("NfcFEmulator", e);
+            Log.e("NfcFEmulator", String.valueOf(e));
         }
     }
 
