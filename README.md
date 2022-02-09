@@ -1,11 +1,12 @@
-# nfcfemulator
+# Capacitor-NfcFEmulator
 
-NfcF Card Emulator
+NfcF Card Emulator  
+**Android only!!**
 
 ## Install
 
 ```bash
-npm install nfcfemulator
+npm install @kamyu/capacitor-nfcfemulator
 npx cap sync
 ```
 
